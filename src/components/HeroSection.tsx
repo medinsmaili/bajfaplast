@@ -1,34 +1,39 @@
-import heroImage from "@/assets/hero-bottles.jpg";
+import heroImg from "@/assets/hero-worker.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-      <div className="absolute inset-0">
-        <img
-          src={heroImage}
-          alt="PET bottles collection"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-surface-dark/70" />
+    <section className="relative bg-background">
+      {/* Top headline */}
+      <div className="text-center py-6">
+        <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-primary tracking-tight">
+          Manufacturing Consistently High-Quality Plastic Packaging
+        </h1>
       </div>
-      <div className="container relative z-10 py-20">
-        <div className="max-w-2xl">
-          <p className="text-primary font-body text-sm tracking-[0.3em] uppercase mb-4 animate-fade-in-up">
-            Premium Packaging Solutions
-          </p>
-          <h1 className="font-display text-5xl md:text-7xl text-surface-dark-foreground leading-tight mb-6 animate-fade-in-up" style={{ animationDelay: "0.15s" }}>
-            PET Bottles, Closures & Preforms
-          </h1>
-          <p className="text-surface-dark-foreground/80 text-lg md:text-xl max-w-xl mb-10 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-            Delivering world-class PET packaging for beverages, food, pharmaceuticals, and personal care industries.
-          </p>
-          <div className="flex gap-4 animate-fade-in-up" style={{ animationDelay: "0.45s" }}>
-            <a href="#products" className="bg-primary text-primary-foreground px-8 py-3.5 rounded-sm font-body font-medium hover:opacity-90 transition-opacity">
-              View Products
-            </a>
-            <a href="#contact" className="border border-surface-dark-foreground/30 text-surface-dark-foreground px-8 py-3.5 rounded-sm font-body font-medium hover:bg-surface-dark-foreground/10 transition-colors">
-              Contact Us
-            </a>
+
+      {/* Hero content */}
+      <div className="container relative">
+        <div className="flex flex-col lg:flex-row items-stretch gap-0">
+          {/* Text overlay card */}
+          <div className="bg-accent text-accent-foreground p-8 md:p-12 lg:max-w-md flex flex-col justify-center z-10 lg:-mr-16 relative">
+            <h2 className="font-display text-2xl md:text-3xl font-bold mb-4">
+              Experience a True Partnership
+            </h2>
+            <p className="text-accent-foreground/90 leading-relaxed">
+              Our boutique-style business is large enough to meet the most demanding bottle and closure
+              packaging system requests, but small enough to care about the success of your business.{" "}
+              <a href="#contact" className="underline font-semibold hover:text-primary-foreground">
+                Contact us
+              </a>.
+            </p>
+          </div>
+
+          {/* Hero image */}
+          <div className="flex-1">
+            <img
+              src={heroImg}
+              alt="Bajfa Plast manufacturing facility worker"
+              className="w-full h-72 md:h-96 lg:h-[440px] object-cover"
+            />
           </div>
         </div>
       </div>

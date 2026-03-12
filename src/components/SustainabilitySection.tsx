@@ -1,28 +1,46 @@
+import { Leaf, Recycle, Droplets } from "lucide-react";
+
 const SustainabilitySection = () => {
   return (
-    <section id="sustainability" className="py-24 bg-surface-dark">
+    <section id="sustainability" className="py-20 bg-background">
       <div className="container">
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-primary font-body text-sm tracking-[0.3em] uppercase mb-3">Sustainability</p>
-          <h2 className="font-display text-4xl md:text-5xl text-surface-dark-foreground mb-6">
-            Committed to a Greener Future
-          </h2>
-          <p className="text-surface-dark-foreground/70 text-lg leading-relaxed mb-12">
-            PET is the most recycled plastic in the world. We are committed to reducing environmental impact 
-            through lightweight designs, recycled PET (rPET) integration, and energy-efficient manufacturing processes.
+        <div className="text-center mb-12">
+          <p className="text-primary font-display text-sm tracking-[0.2em] uppercase font-semibold mb-3">
+            Always Listening. Always Innovating. Always Improving.
           </p>
-          <div className="grid md:grid-cols-3 gap-8 text-left">
-            {[
-              { title: "Lightweight Design", desc: "Up to 30% weight reduction without compromising strength, reducing transport emissions." },
-              { title: "rPET Integration", desc: "Our preforms support up to 100% recycled PET content for a circular economy." },
-              { title: "Zero Waste Goal", desc: "Advanced manufacturing processes with 99.5% material utilization rate." },
-            ].map((item) => (
-              <div key={item.title} className="border border-surface-dark-foreground/15 rounded-lg p-6">
-                <h3 className="font-display text-xl text-surface-dark-foreground mb-3">{item.title}</h3>
-                <p className="text-surface-dark-foreground/60 text-sm leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Sustainability & Innovation
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
+            We are committed to reducing environmental impact through innovation in materials,
+            processes, and product design.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {[
+            {
+              icon: Leaf,
+              title: "Eco-Friendly Materials",
+              desc: "Using recycled PET (rPET) and bio-based resins to minimize our environmental footprint while maintaining product quality.",
+            },
+            {
+              icon: Recycle,
+              title: "Circular Economy",
+              desc: "Designing bottles and closures for maximum recyclability, supporting a closed-loop packaging lifecycle.",
+            },
+            {
+              icon: Droplets,
+              title: "Lightweight Design",
+              desc: "Advanced engineering to reduce material usage by up to 30% without compromising performance or durability.",
+            },
+          ].map((item) => (
+            <div key={item.title} className="border border-border rounded-lg p-8 hover:shadow-lg transition-shadow bg-card">
+              <item.icon className="w-10 h-10 text-primary mb-4" strokeWidth={1.5} />
+              <h3 className="font-display font-bold text-lg text-foreground mb-3">{item.title}</h3>
+              <p className="text-muted-foreground leading-relaxed text-sm">{item.desc}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
