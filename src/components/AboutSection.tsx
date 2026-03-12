@@ -1,34 +1,57 @@
-import { Factory, Award, Recycle, Globe } from "lucide-react";
+import { Zap, Heart, Shield, CheckCircle, Star } from "lucide-react";
+import teamImg from "@/assets/team-photo.jpg";
 
-const stats = [
-  { icon: Factory, label: "Production Capacity", value: "50M+ Units/Year" },
-  { icon: Award, label: "ISO Certified", value: "9001 & 22000" },
-  { icon: Recycle, label: "Recyclable", value: "100% PET" },
-  { icon: Globe, label: "Countries Served", value: "25+" },
+const values = [
+  { icon: Zap, title: "Responsiveness", desc: "We'll get you what you need quickly." },
+  { icon: Heart, title: "Courtesy", desc: "We'll treat you in a respectful, friendly manner." },
+  { icon: Shield, title: "Integrity", desc: "We'll have your best interests in mind." },
+  { icon: CheckCircle, title: "Dependability", desc: "We'll do exactly what we say we'll do." },
+  { icon: Star, title: "Perfection", desc: "We'll make perfect bottles and closures every time." },
 ];
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 bg-secondary">
+    <section id="about" className="py-20 bg-surface-dark">
       <div className="container">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <p className="text-primary font-body text-sm tracking-[0.3em] uppercase mb-3">About Us</p>
-          <h2 className="font-display text-4xl md:text-5xl text-foreground mb-6">
-            Trusted by Leading Brands
+        <div className="text-center mb-12">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-surface-dark-foreground mb-4">
+            Experience a Plastic Packaging Partnership
           </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed">
-            With over two decades of experience in PET packaging, we combine cutting-edge technology 
-            with rigorous quality standards to deliver packaging solutions that protect your products and elevate your brand.
+          <p className="text-surface-dark-foreground/70 text-lg max-w-3xl mx-auto leading-relaxed">
+            Bajfa Plast has been family-owned since its founding. Our boutique-style business is large enough to
+            meet the most demanding plastic packaging requests, but small enough to care about the success of
+            your business and your employees. We make plastic packaging that is functional, easy to use, and
+            protects the product inside.
           </p>
         </div>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-          {stats.map((s) => (
-            <div key={s.label} className="bg-card rounded-lg p-8 text-center shadow-sm border border-border">
-              <s.icon className="w-8 h-8 text-primary mx-auto mb-4" strokeWidth={1.5} />
-              <p className="font-display text-2xl text-foreground mb-1">{s.value}</p>
-              <p className="text-muted-foreground text-sm">{s.label}</p>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-16">
+          {values.map((v) => (
+            <div key={v.title} className="text-center p-6">
+              <v.icon className="w-10 h-10 text-primary mx-auto mb-4" strokeWidth={1.5} />
+              <h3 className="font-display font-bold text-surface-dark-foreground mb-2">{v.title}</h3>
+              <p className="text-surface-dark-foreground/60 text-sm">{v.desc}</p>
             </div>
           ))}
+        </div>
+
+        <div className="flex flex-col lg:flex-row gap-12 items-center">
+          <div className="lg:w-1/2">
+            <img
+              src={teamImg}
+              alt="Bajfa Plast team in manufacturing plant"
+              className="w-full h-72 md:h-96 object-cover rounded-lg shadow-xl"
+            />
+          </div>
+          <div className="lg:w-1/2">
+            <p className="text-surface-dark-foreground/80 text-lg leading-relaxed mb-6">
+              Not only are our bottles and closures made with pride, but our product consistency and repeatable
+              quality would not be possible without our dedicated employees and positive work environment.
+            </p>
+            <a href="#contact" className="inline-block bg-primary text-primary-foreground px-8 py-3 rounded font-display font-semibold text-sm hover:opacity-90 transition-opacity">
+              Learn More About Us
+            </a>
+          </div>
         </div>
       </div>
     </section>
